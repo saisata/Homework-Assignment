@@ -1,4 +1,3 @@
-
 # Quality Match GmbH Homework Assignment 
 
 ## Code Description
