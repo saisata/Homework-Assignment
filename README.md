@@ -11,7 +11,7 @@ This file contains "DefineVariable" class which will provide the appropriate sti
 This file contains main function to show the necessary output for the task.
 
 
-Befor running the program, ensure that the necessary datasets are in the same folder as the code.
+Before running the program, ensure that the necessary datasets are in the same folder as the code.
 
 In order to run the code run as follows in the command line:
 ```python
