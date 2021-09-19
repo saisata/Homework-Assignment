@@ -13,7 +13,7 @@ class DefineVariables():
         self.cant_solve='cant_solve'
         self.yes='yes'
         self.no='no'
-        self.is_bycycle='is_bicycle'
+        self.is_bicycle='is_bicycle'
         self.index_orient='index'
         self.good_annotations_count='good_annotations_count'
         self.bad_annotations_count='bad_annotations_count'

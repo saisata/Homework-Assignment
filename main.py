@@ -4,9 +4,19 @@ import argparse
 import matplotlib.pyplot as plt
 import numpy as np
 
-def plot_duration_statistics(annotation_times):
-    fig1, ax1 = plt.subplots(figsize=(10,10))
-    ax1.boxplot(np.array(annotation_times))
+
+def plot_duration_statistics(data):
+    fig1, ax1 = plt.subplots(figsize=(20,20))
+    ax1.boxplot(np.array(data))
+    ax1.set_ylabel('duration times')
+    ax1.set_title('Duration time statistics')
+    plt.show()
+
+def plot_box_plots(data):
+    fig1, ax1 = plt.subplots(figsize=(20,20))
+    ax1.boxplot(np.array(data))
+    ax1.set_ylabel('number of bad annotations')
+    ax1.set_title('Bad Annotation Statistics')
     plt.show()
 
 def get_good_annotation_statistics(final_dataset):
@@ -15,7 +25,8 @@ def get_good_annotation_statistics(final_dataset):
     
 
 def get_bad_annotation_statistics(bad_annotations_count):
-     return final_dataset[variable.bad_annotations_count].describe()
+    variable=DefineVariables()
+    return final_dataset[variable.bad_annotations_count].describe()
 
 if __name__ == '__main__':
     parser = argparse.ArgumentParser(description='Home Assignment')
@@ -41,7 +52,7 @@ if __name__ == '__main__':
     print(f'1b. The mean, minimum and maximum duration times are {mean_annotation_time}, {minimum_annotation_time} and {maximum_annotation_time}')
     plot_duration_statistics(annotators_times)
     print(f'1c. There are different work packages sizes that are assigned to different annotators \
-    The range of various work package sizes ranges from {len(np.unique(np.array(work_package_size)))}')
+    The range of various work package sizes ranges from {min(np.unique(np.array(work_package_size)))} to {max(np.unique(np.array(work_package_size)))}')
     print(f'1d. There are in total {highly_disagree_reponses} in the dataset. Highly disagree responses comes when \
     there are equal number of positive and negative responses in each task in the dataset.')
 
@@ -60,6 +71,11 @@ if __name__ == '__main__':
     {get_bad_annotation_statistics(final_dataset)}. \
     The final dataset looks as follows : \
     {final_dataset}.')
+    # plot_box_plots(good_annotators_count)
+    # plot_box_plots(bad_annotators_count)
+    # plot_notmal_distribution(good_annotators_count)
+    # plot_notmal_distribution(bad_annotators_count)
+
     
     
 
