@@ -1,4 +1,4 @@
-# Quality Match GmbH Homework Assignment 
+# Homework Assignment 
 
 ## Code Description
 This assignment corresponds to the homework task to analyse the bicycle data. The overall code consists of three files as follows:
